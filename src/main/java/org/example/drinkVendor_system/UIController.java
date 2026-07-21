@@ -15,21 +15,21 @@ public class UIController {
         int InputAmount = 0;
         switch (idString){
 //            5円の時加算なしで処理を終了する
-            case "5": break ;
+            case "yen5Button": break ;
 //            それ以外のボタンが押されたときは数字を受け取ってsumMoney（総投入金額）に加算する
-            case "10":
+            case "yen10Button":
                 InputAmount = 10 ;
                 break;
-            case "50":
+            case "yen50Button":
                 InputAmount = 50 ;
                 break;
-            case "100":
+            case "yen100Button":
                 InputAmount = 100 ;
                 break;
-            case "500" :
+            case "yen500Button" :
                 InputAmount = 500 ;
                 break;
-            case "1000":
+            case "yen1000Button":
                 InputAmount = 1000 ;
                 break;
             default:
