@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="655.0" prefWidth="573.0" style="-fx-background-color: #a30044;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.drinkVendor_system.UIController">   <children>
+    <VBox layoutX="5.0" layoutY="-1.0" prefHeight="639.0" prefWidth="562.0" style="-fx-background-color: linear-gradient(to bottom right, white 50%, #d80066 50%);">
+        <children>
+            <HBox prefHeight="100.0" prefWidth="671.0" style="-fx-background-color: #a30044;">
+                <children>
+                    <Label prefHeight="59.0" prefWidth="152.0" style="-fx-text-fill: #e60012; -fx-effect: dropshadow(three-pass-box, white, 8, 0.9, 0, 0);" text="Cola">
+                        <font>
+                            <Font name="Arial Black" size="30.0" />
+                        </font>
+                        <HBox.margin>
+                            <Insets left="30.0" />
+                        </HBox.margin></Label>
+                    <Label style="-fx-text-fill: #d1d5db; -fx-effect: dropshadow(three-pass-box, blue, 8, 0.9, 0, 0);" text="Juce">
+                        <font>
+                            <Font name="Arial Black" size="30.0" />
+                        </font>
+                        <HBox.margin>
+                            <Insets left="50.0" />
+                        </HBox.margin></Label>
+                    <Label prefWidth="88.0" style="-fx-text-fill: #00b000; -fx-effect: dropshadow(three-pass-box, #9fef00, 8, 0.9, 0, 0);" text="Tea">
+                        <font>
+                            <Font name="Arial Black" size="30.0" />
+                        </font>
+                        <HBox.margin>
+                            <Insets left="120.0" />
+                        </HBox.margin></Label>
+                </children>
+            </HBox>
+            <GridPane alignment="CENTER" prefHeight="225.0" prefWidth="674.0" style="-fx-background-color: #cffafe; -fx-background-radius: 10; -fx-effect: dropshadow(one-pass-box, #3b82f6, 1, 0.9, 1, 1);">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints maxHeight="162.33334732055664" minHeight="10.0" prefHeight="63.33333206176758" vgrow="SOMETIMES" />
+                    <RowConstraints maxHeight="121.33332824707031" minHeight="10.0" prefHeight="22.00000127156575" vgrow="SOMETIMES" />
+                    <RowConstraints maxHeight="157.99998982747397" minHeight="6.000005086263002" prefHeight="30.0" vgrow="SOMETIMES" />
+                </rowConstraints>
+                <children>
+                    <Label text="160円" GridPane.rowIndex="1">
+                        <GridPane.margin>
+                            <Insets left="40.0" />
+                        </GridPane.margin>
+                    </Label>
+                    <Label text="160円" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <GridPane.margin>
+                            <Insets left="40.0" />
+                        </GridPane.margin>
+                    </Label>
+                    <Label text="180円" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                        <GridPane.margin>
+                            <Insets left="40.0" />
+                        </GridPane.margin>
+                    </Label>
+                    <Label text="180円" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                        <GridPane.margin>
+                            <Insets left="40.0" />
+                        </GridPane.margin>
+                    </Label>
+                    <Label alignment="CENTER" text="180円" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                        <GridPane.margin>
+                            <Insets left="40.0" />
+                        </GridPane.margin>
+                    </Label>
+                    <ImageView fitHeight="85.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../../../img/coke.png" />
+                        </image>
+                        <GridPane.margin>
+                            <Insets left="37.0" />
+                        </GridPane.margin>
+                    </ImageView>
+                    <Button fx:id="ColaButton" mnemonicParsing="false" onAction="#pushDrinkBtn" prefWidth="50.0" style="-fx-background-radius: 10; -fx-background-color: red;" GridPane.rowIndex="2">
+                        <GridPane.margin>
+                            <Insets left="30.0" />
+                        </GridPane.margin>
+                    </Button>
+                    <Button fx:id="OrangeButton" mnemonicParsing="false" onAction="#pushDrinkBtn" prefWidth="50.0" style="-fx-background-radius: 10; -fx-background-color: red;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        <GridPane.margin>
+                            <Insets left="30.0" />
+                        </GridPane.margin>
+                    </Button>
+                    <Button fx:id="AppleButton" mnemonicParsing="false" onAction="#pushDrinkBtn" prefHeight="25.0" prefWidth="50.0" style="-fx-background-radius: 10; -fx-background-color: red;" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                        <GridPane.margin>
+                            <Insets left="30.0" />
+                        </GridPane.margin>
+                    </Button>
+                    <Button fx:id="CoffeeButton" mnemonicParsing="false" onAction="#pushDrinkBtn" prefHeight="25.0" prefWidth="50.0" style="-fx-background-radius: 10; -fx-background-color: red;" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                        <GridPane.margin>
+                            <Insets left="30.0" />
+                        </GridPane.margin>
+                    </Button>
+                    <Button fx:id="CocoaButton" mnemonicParsing="false" onAction="#pushDrinkBtn" prefHeight="25.0" prefWidth="50.0" style="-fx-background-radius: 10; -fx-background-color: red;" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                        <GridPane.margin>
+                            <Insets left="30.0" />
+                        </GridPane.margin>
+                    </Button>
+                    <ImageView fitHeight="63.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+                        <image>
+                            <Image url="@../../../img/orange.png" />
+                        </image>
+                        <GridPane.margin>
+                            <Insets left="25.0" />
+                        </GridPane.margin>
+                    </ImageView>
+                    <ImageView fitHeight="80.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
+                        <image>
+                            <Image url="@../../../img/apple.png" />
+                        </image>
+                        <GridPane.margin>
+                            <Insets left="25.0" />
+                        </GridPane.margin>
+                    </ImageView>
+                    <ImageView fitHeight="83.0" fitWidth="74.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
+                        <image>
+                            <Image url="@../../../img/coffe.png" />
+                        </image>
+                        <GridPane.margin>
+                            <Insets left="20.0" />
+                        </GridPane.margin>
+                    </ImageView>
+                    <ImageView fitHeight="63.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4">
+                        <image>
+                            <Image url="@../../../img/kokoa.png" />
+                        </image>
+                        <GridPane.margin>
+                            <Insets left="25.0" />
+                        </GridPane.margin>
+                    </ImageView>
+                </children>
+                <VBox.margin>
+                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                </VBox.margin>
+            </GridPane>
+            <GridPane alignment="CENTER" prefHeight="243.0" prefWidth="542.0" style="-fx-background-color: #cffafe; -fx-background-radius: 10; -fx-effect: dropshadow(one-pass-box, #3b82f6, 1, 0.9, 1, 1);">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints maxHeight="162.33334732055664" minHeight="10.0" prefHeight="62.999979654947914" vgrow="SOMETIMES" />
+                    <RowConstraints maxHeight="121.33332824707031" minHeight="10.0" prefHeight="37.00002034505209" vgrow="SOMETIMES" />
+                    <RowConstraints maxHeight="157.99998982747397" minHeight="6.000005086263002" prefHeight="30.0" vgrow="SOMETIMES" />
+                </rowConstraints>
+                <children>
+                    <Label text="110円" GridPane.rowIndex="1">
+                        <GridPane.margin>
+                            <Insets left="40.0" />
+                        </GridPane.margin>
+                    </Label>
+                    <Label text="120円" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <GridPane.margin>
+                            <Insets left="40.0" />
+                        </GridPane.margin>
+                    </Label>
+                    <Label text="160円" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                        <GridPane.margin>
+                            <Insets left="40.0" />
+                        </GridPane.margin>
+                    </Label>
+                    <Label text="150円" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                        <GridPane.margin>
+                            <Insets left="40.0" />
+                        </GridPane.margin>
+                    </Label>
+                    <ImageView fitHeight="68.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../../../img/mizu.png" />
+                        </image>
+                        <GridPane.margin>
+                            <Insets left="20.0" />
+                        </GridPane.margin>
+                    </ImageView>
+                    <Button fx:id="WaterButton" mnemonicParsing="false" onAction="#pushDrinkBtn" prefWidth="50.0" style="-fx-background-radius: 10; -fx-background-color: red;" GridPane.rowIndex="2">
+                        <GridPane.margin>
+                            <Insets left="30.0" />
+                        </GridPane.margin>
+                    </Button>
+                    <Button fx:id="SparklingWaterButton" mnemonicParsing="false" onAction="#pushDrinkBtn" prefWidth="50.0" style="-fx-background-radius: 10; -fx-background-color: red;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        <GridPane.margin>
+                            <Insets left="30.0" />
+                        </GridPane.margin>
+                    </Button>
+                    <Button fx:id="GreenButton" mnemonicParsing="false" onAction="#pushDrinkBtn" prefWidth="50.0" style="-fx-background-radius: 10; -fx-background-color: red;" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                        <GridPane.margin>
+                            <Insets left="30.0" />
+                        </GridPane.margin>
+                    </Button>
+                    <Button fx:id="TeaButton" mnemonicParsing="false" onAction="#pushDrinkBtn" prefWidth="50.0" style="-fx-background-radius: 10; -fx-background-color: red;" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                        <GridPane.margin>
+                            <Insets left="30.0" />
+                        </GridPane.margin>
+                    </Button>
+                    <ImageView fitHeight="52.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+                        <image>
+                            <Image url="@../../../img/tansan.png" />
+                        </image>
+                        <GridPane.margin>
+                            <Insets left="20.0" />
+                        </GridPane.margin>
+                    </ImageView>
+                    <ImageView fitHeight="65.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
+                        <image>
+                            <Image url="@../../../img/green.png" />
+                        </image>
+                        <GridPane.margin>
+                            <Insets left="25.0" />
+                        </GridPane.margin>
+                    </ImageView>
+                    <ImageView fitHeight="57.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
+                        <image>
+                            <Image url="@../../../img/tea.png" />
+                        </image>
+                        <GridPane.margin>
+                            <Insets left="17.0" />
+                        </GridPane.margin>
+                    </ImageView>
+                </children>
+                <VBox.margin>
+                    <Insets left="10.0" right="10.0" />
+                </VBox.margin>
+            </GridPane>
+            <HBox prefHeight="180.0" prefWidth="716.0">
+                <children>
+                    <VBox prefHeight="101.0" prefWidth="269.0">
+                        <children>
+                            <HBox fx:id="ChangeLabel" prefHeight="51.0" prefWidth="163.0">
+                                <children>
+                                    <Label text="投入金額">
+                                        <font>
+                                            <Font size="30.0" />
+                                        </font>
+                                    </Label>
+                                    <Label fx:id="AmountLabel" alignment="TOP_RIGHT" prefHeight="45.0" prefWidth="105.0" style="-fx-text-fill: green; -fx-background-color: black; -fx-alignment: LEFT;" text="０">
+                                        <font>
+                                            <Font size="30.0" />
+                                        </font>
+                                    </Label>
+                                    <Label prefHeight="45.0" prefWidth="37.0" text="円">
+                                        <font>
+                                            <Font size="30.0" />
+                                        </font>
+                                    </Label>
+                                </children>
+                            </HBox>
+                            <HBox prefHeight="24.0" prefWidth="197.0">
+                                <children>
+                                    <Label prefHeight="45.0" prefWidth="120.0" text="おつり">
+                                        <font>
+                                            <Font size="30.0" />
+                                        </font>
+                                    </Label>
+                                    <Label alignment="CENTER_RIGHT" prefHeight="45.0" prefWidth="104.0" style="-fx-text-fill: green; -fx-background-color: black;" text="０">
+                                        <font>
+                                            <Font size="30.0" />
+                                        </font>
+                                    </Label>
+                                    <Label prefHeight="17.0" prefWidth="34.0" text="円">
+                                        <font>
+                                            <Font size="30.0" />
+                                        </font>
+                                    </Label>
+                                </children>
+                            </HBox>
+                        </children>
+                    </VBox>
+                    <ImageView fitHeight="126.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../../../img/sousyoku_1.png" />
+                        </image>
+                        <HBox.margin>
+                            <Insets left="10.0" />
+                        </HBox.margin>
+                    </ImageView>
+                    <Button fx:id="RefundButton" mnemonicParsing="false" onAction="#refund" style="-fx-background-color: transparent;">
+                        <graphic>
+                            <ImageView fitHeight="117.0" fitWidth="135.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../../../img/reba-.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                </children>
+                <VBox.margin>
+                    <Insets top="10.0" />
+                </VBox.margin>
+            </HBox>
+            <HBox prefHeight="47.0" prefWidth="562.0">
+                <children>
+                    <Button fx:id="yen5Button" mnemonicParsing="false" onAction="#pushMoneyBtn" prefHeight="70.0" prefWidth="82.0" style="-fx-background-radius: 200; -fx-background-color: transparent;">
+                        <graphic>
+                            <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../../../img/money_5.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Button fx:id="yen10Button" mnemonicParsing="false" onAction="#pushMoneyBtn" style="-fx-background-radius: 200; -fx-background-color: transparent;">
+                        <graphic>
+                            <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../../../img/money_10.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Button fx:id="yen50Button" mnemonicParsing="false" onAction="#pushMoneyBtn" style="-fx-background-radius: 200; -fx-background-color: transparent;">
+                        <graphic>
+                            <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../../../img/money_50.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Button fx:id="yen100Button" mnemonicParsing="false" onAction="#pushMoneyBtn" style="-fx-background-radius: 200; -fx-background-color: transparent;">
+                        <graphic>
+                            <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../../../img/money_100.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Button fx:id="yen500Button" mnemonicParsing="false" onAction="#pushMoneyBtn" style="-fx-background-radius: 200; -fx-background-color: transparent;">
+                        <graphic>
+                            <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../../../img/money_500.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Button fx:id="yen1000Button" mnemonicParsing="false" onAction="#pushMoneyBtn" prefHeight="110.0" prefWidth="116.0" style="-fx-background-color: transparent;">
+                        <graphic>
+                            <ImageView fitHeight="83.0" fitWidth="211.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../../../img/money_1000_kitazato.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                </children>
+                <VBox.margin>
+                    <Insets />
+                </VBox.margin>
+            </HBox>
+            <StackPane prefHeight="76.0" prefWidth="562.0">
+                <children>
+                    <Group>
+                        <children>
+                            <Rectangle arcHeight="15.0" arcWidth="15.0" fill="linear-gradient(from 0.0% 0.0% to 0.0% 100.0%, #2f2f2f 0%, #4a4a4a 100%)" height="100.0" stroke="#1d1d1d" strokeType="INSIDE" strokeWidth="2.0" width="460.0" />
+
+                            <Rectangle arcHeight="10.0" arcWidth="10.0" fill="linear-gradient(from 0.0% 0.0% to 0.0% 100.0%, #7c7c7c 0%, #555555 70%, #3a3a3a 100%)" height="85.0" layoutX="5.0" layoutY="5.0" stroke="#2b2b2b" strokeType="INSIDE" width="450.0" />
+
+                            <ImageView fx:id="dispensedTea" fitHeight="75.0" fitWidth="75.0" layoutX="190.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" rotate="20.0" visible="false">
+                                <image>
+                                    <Image url="@../../../img/green.png" />
+                                </image>
+                            </ImageView>
+
+
+
+
+
+
+                            <Label fx:id="OutputLabel" alignment="CENTER" layoutX="170.0" layoutY="25.0" prefHeight="45.0" prefWidth="120.0" style="-fx-background-color: white; -fx-border-color: #333333; -fx-border-width: 2; -fx-background-radius: 5; -fx-border-radius: 5; -fx-text-fill: black;" text="お茶" visible="false">
+                                <font>
+                                    <Font name="System Bold" size="20.0" />
+                                </font>
+                            </Label>
+                        </children>
+                    </Group>
+                </children>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+            </StackPane>
+        </children>
+    </VBox>
+</children>
+</AnchorPane>
+
