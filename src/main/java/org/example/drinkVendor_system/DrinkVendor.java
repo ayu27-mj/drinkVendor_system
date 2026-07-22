@@ -1,6 +1,7 @@
 package org.example.drinkVendor_system;
 
 public class DrinkVendor {
+
     private Item items[]={
             new Item(1,"コーラ",160,"@../../../img/coke.png"),
             new Item(2,"オレンジジュース",160,"@../../../img/orange.png"),
@@ -15,8 +16,28 @@ public class DrinkVendor {
     private int sumMoney=0;
     private int purchase=0;
 
-    public Item[] showItems(){
+    public Item getItems() {
         return items;
+    }
+
+    public void setItems(Item items) {
+        this.items = items;
+    }
+
+    public int getSumMoney() {
+        return sumMoney;
+    }
+
+    public void setSumMoney(int sumMoney) {
+        this.sumMoney = sumMoney;
+    }
+
+    public int getPurchase() {
+        return purchase;
+    }
+
+    public void setPurchase(int purchase) {
+        this.purchase = purchase;
     }
 
     public Item serveDrink(int drinkNumber){
