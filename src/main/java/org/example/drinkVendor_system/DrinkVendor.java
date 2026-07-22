@@ -16,11 +16,11 @@ public class DrinkVendor {
     private int sumMoney=0;
     private int purchase=0;
 
-    public Item getItems() {
+    public Item[] getItems() {
         return items;
     }
 
-    public void setItems(Item items) {
+    public void setItems(Item items[]) {
         this.items = items;
     }
 
