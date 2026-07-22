@@ -140,7 +140,7 @@ public class UIController {
         int currentMoney = drinkVendor.getSumMoney();
         System.out.println("お釣り: " + currentMoney + "円");
 
-        drinkVendor.resetSumMoney();
+        drinkVendor.setSumMoney(0);
 
         viewNowMoney();
         changeBtnColor();
