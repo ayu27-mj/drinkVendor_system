@@ -248,7 +248,7 @@
                 <children>
                     <VBox prefHeight="101.0" prefWidth="269.0">
                         <children>
-                            <HBox fx:id="ChangeLabel" prefHeight="51.0" prefWidth="163.0">
+                            <HBox prefHeight="51.0" prefWidth="163.0">
                                 <children>
                                     <Label text="投入金額">
                                         <font>
@@ -274,7 +274,7 @@
                                             <Font size="30.0" />
                                         </font>
                                     </Label>
-                                    <Label alignment="CENTER_RIGHT" prefHeight="45.0" prefWidth="104.0" style="-fx-text-fill: green; -fx-background-color: black;" text="０">
+                                    <Label fx:id="ChangeLabel" alignment="CENTER_RIGHT" prefHeight="45.0" prefWidth="104.0" style="-fx-text-fill: green; -fx-background-color: black;" text="０">
                                         <font>
                                             <Font size="30.0" />
                                         </font>
@@ -406,4 +406,3 @@
     </VBox>
 </children>
 </AnchorPane>
-

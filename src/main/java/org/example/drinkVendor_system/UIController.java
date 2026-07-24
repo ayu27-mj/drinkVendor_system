@@ -63,15 +63,15 @@ public class UIController {
 //        商品IDをserveDrinkに送って取り出し口に商品を表示させる
         Item prod =  drinkVendor.serveDrink( prodID ) ;
         OutputLabel.setText( prod.getName() );
+        OutputLabel.setVisible(true);
 //        購入回数が3回に到達したときお釣りを吐き出させて強制終了する
         if( drinkVendor.getPurchase() >= 3 ){
             refund();
+            drinkVendor.setPurchase( 0 );
         }
 //        総購入金額の表示を行う
         viewNowMoney();
     }
-    @FXML
-    private Button pushMoneyBtn; // fxmlファイルのonAction準拠
     //    お金ボタンが押されたときの処理
     @FXML
     void pushMoneyBtn(ActionEvent e){
@@ -115,8 +115,8 @@ public class UIController {
      */
     public void viewNowMoney() {
         int currentMoney = drinkVendor.getSumMoney();
-        if (nowMoneyLabel != null) {
-            nowMoneyLabel.setText(currentMoney + "円");
+        if (AmountLabel != null) {
+            AmountLabel.setText(currentMoney + "");
         }
     }
 
@@ -146,10 +146,9 @@ public class UIController {
     @FXML
     public void refund() {
         int currentMoney = drinkVendor.getSumMoney();
-        System.out.println("お釣り: " + currentMoney + "円");
 
         drinkVendor.setSumMoney(0);
-
+        ChangeLabel.setText(currentMoney + "");
         viewNowMoney();
         changeBtnColor();
     }
