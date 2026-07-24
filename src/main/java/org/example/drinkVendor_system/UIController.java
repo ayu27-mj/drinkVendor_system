@@ -9,6 +9,7 @@ public class UIController {
     // === あなたの担当：FXML・画面要素の宣言 ===
     @FXML private Label nowMoneyLabel;
 
+//    商品ボタン
     @FXML private Button ColaButton;
     @FXML private Button OrangeButton;
     @FXML private Button AppleButton;
@@ -18,6 +19,10 @@ public class UIController {
     @FXML private Button SparklingWaterButton;
     @FXML private Button GreenButton;
     @FXML private Button TeaButton;
+//    表示ラベル
+    @FXML private Label OutputLabel ;
+    @FXML private Label AmountLabel ;
+    @FXML private Label ChangeLabel ;
 
     // ボタン格納用配列
     private Button[] drinkButtons;
@@ -36,33 +41,39 @@ public class UIController {
         };
     }
 
-    // ==========================================
-    // 相手のコード（一切変更していません）
-    // ==========================================
-
-    void pushDrinkBtn( ActionEvent e ){
+    @FXML
+    void pushDrinkBtn(ActionEvent e ){
 //        商品のボタンが押されたとき、何のボタンが押されたのかを取得する
         Button button = (Button) e.getSource(); // 押されたボタンの情報を取得
         String idString = button.getId(); // fx:idを取得する
 //        押された商品に応じてserve用の商品IDを取得する
-        int prodID = 0 ;
+        int prodID = 0;
         switch (idString){
-            case "ColaButton": prodID = 1; break;
-            case "OrangeButton": prodID = 2; break;
-            case "AppleButton" : prodID = 3; break;
-            case "CoffeeButton" : prodID = 4; break;
-            case "CocoaButton" : prodID = 5; break;
-            case "WaterButton" : prodID = 6; break;
-            case "SparklingWaterButton" : prodID = 7; break;
-            case "GreenButton" : prodID = 8; break;
-            case "TeaButton" : prodID = 9; break;
+//            DrinkVendor側で、IDを配列で処理しているため0スタート
+            case "ColaButton": break;
+            case "OrangeButton": prodID = 1; break;
+            case "AppleButton" : prodID = 2; break;
+            case "CoffeeButton" : prodID = 3; break;
+            case "CocoaButton" : prodID = 4; break;
+            case "WaterButton" : prodID = 5; break;
+            case "SparklingWaterButton" : prodID = 6; break;
+            case "GreenButton" : prodID = 7; break;
+            case "TeaButton" : prodID = 8; break;
         }
 //        商品IDをserveDrinkに送って取り出し口に商品を表示させる
-        serveDrink( prodID ) ;
+        Item prod =  drinkVendor.serveDrink( prodID ) ;
+        OutputLabel.setText( prod.getName() );
+//        購入回数が3回に到達したときお釣りを吐き出させて強制終了する
+        if( drinkVendor.getPurchase() >= 3 ){
+            refund();
+        }
+//        総購入金額の表示を行う
+        viewNowMoney();
     }
     @FXML
     private Button pushMoneyBtn; // fxmlファイルのonAction準拠
     //    お金ボタンが押されたときの処理
+    @FXML
     void pushMoneyBtn(ActionEvent e){
 //        何円のボタンが押されたのかのチェック
         Button button = (Button) e.getSource(); // 押されたボタンの情報を取得
@@ -91,16 +102,13 @@ public class UIController {
         }
 //        加算処理
         if (InputAmount >= 5){
-//            どこからDrinkVendor内のsumMoneyを取得するか確認して変更する
-            sumMoney += InputAmount ;
+            drinkVendor.setSumMoney( drinkVendor.getSumMoney() + InputAmount ) ;
         }
 //        changeBtnColorを呼び出して表示の色を変更する
         changeBtnColor() ;
+//        総購入金額の表示を行う
+        viewNowMoney() ;
     }
-
-    // ==========================================
-    // あなたの担当：UI更新・返金処理
-    // ==========================================
 
     /**
      * 総投入金額をラベル上に表示する処理です。
@@ -117,7 +125,7 @@ public class UIController {
      */
     public void changeBtnColor() {
         int currentMoney = drinkVendor.getSumMoney();
-        Item[] items = drinkVendor.showItems();
+        Item[] items = drinkVendor.getItems() ;
 
         if (drinkButtons != null && items != null) {
             for (int i = 0; i < drinkButtons.length; i++) {
