@@ -17,27 +17,27 @@ public class DrinkVendor {
     private int purchase=0;
 
     public Item[] getItems() {
-        return items;
+        return items==null ? null : items.clone();
     }
 
     public void setItems(Item items[]) {
-        this.items = items;
+        this.items = items==null ? null : items.clone();
     }
 
     public int getSumMoney() {
-        return sumMoney;
+        return sumMoney==0?0:sumMoney;
     }
 
     public void setSumMoney(int sumMoney) {
-        this.sumMoney = sumMoney;
+        this.sumMoney = sumMoney==0?0:sumMoney;
     }
 
     public int getPurchase() {
-        return purchase;
+        return purchase == 0?0:purchase;
     }
 
     public void setPurchase(int purchase) {
-        this.purchase = purchase;
+        this.purchase = purchase == 0?0:purchase;
     }
 
     public Item serveDrink(int drinkNumber){
