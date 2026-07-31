@@ -62,7 +62,7 @@ public class JavaFXTest extends ApplicationTest {
         clickOn("#ColaButton");
 
         verifyThat("#OutputLabel", hasText("コーラ"));
-        verifyThat("#AmountLabel", hasText("40"));
+        verifyThat("#ChangeLabel", hasText("40"));
     }
 
     @Test
