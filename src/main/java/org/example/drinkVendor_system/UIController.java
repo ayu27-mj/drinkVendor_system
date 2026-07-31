@@ -42,7 +42,7 @@ public class UIController {
     }
 
     @FXML
-    void pushDrinkBtn(ActionEvent e ){
+    public void pushDrinkBtn(ActionEvent e){
 //        商品のボタンが押されたとき、何のボタンが押されたのかを取得する
         Button button = (Button) e.getSource(); // 押されたボタンの情報を取得
         String idString = button.getId(); // fx:idを取得する
@@ -68,7 +68,7 @@ public class UIController {
         OutputLabel.setText( prod.getName() );
         OutputLabel.setVisible(true);
 //        購入回数が3回に到達したときお釣りを吐き出させて強制終了する
-        if( drinkVendor.getPurchase() >= 3 ){
+        if( drinkVendor.getPurchase() >= 3 || drinkVendor.getSumMoney() < 110 ){
             refund();
             drinkVendor.setPurchase( 0 );
         }
@@ -77,7 +77,7 @@ public class UIController {
     }
     //    お金ボタンが押されたときの処理
     @FXML
-    void pushMoneyBtn(ActionEvent e){
+    public void pushMoneyBtn(ActionEvent e){
 //        何円のボタンが押されたのかのチェック
         Button button = (Button) e.getSource(); // 押されたボタンの情報を取得
         String idString = button.getId(); // fx:idを取得する
