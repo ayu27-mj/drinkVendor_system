@@ -7,7 +7,6 @@ import org.example.drinkVendor_system.DrinkVendorApplication;
 import org.testfx.framework.junit5.ApplicationTest;
 import org.junit.jupiter.api.Test;
 
-// アサーション（検証）に必要なメソッドをインポート
 import static org.testfx.api.FxAssert.verifyThat;
 import static org.testfx.matcher.control.LabeledMatchers.hasText;
 
@@ -22,16 +21,57 @@ public class JavaFXTest extends ApplicationTest {
     }
 
     @Test
-    void 足し算の結果がラベルに正しく表示されること() {
-        // 1. 操作（Arrange/Act）
-        clickOn("#one");
-        clickOn("#plus");
-        clickOn("#two");
-        clickOn("#equal"); // 「=」ボタンをクリック
+    void testAutoRefundAfter3Purchases() {
+        clickOn("#yen1000Button");
+        verifyThat("#AmountLabel", hasText("1000"));
 
-        // 2. 検証（Assert）: 第3日のメインテーマ
-        // IDが "display" のラベルのテキストが "3.0" であることを確認する
-        verifyThat("#display", hasText("3.0"));
+        clickOn("#ColaButton");
+        clickOn("#OrangeButton");
+        clickOn("#AppleButton");
+
+        verifyThat("#AmountLabel", hasText("0"));
+        verifyThat("#ChangeLabel", hasText("500"));
+        verifyThat("#OutputLabel", hasText("リンゴジュース"));
     }
 
+    @Test
+    void testInsufficientFunds() {
+        clickOn("#yen100Button");
+        verifyThat("#AmountLabel", hasText("100"));
+
+        clickOn("#CoffeeButton");
+
+        verifyThat("#AmountLabel", hasText("100"));
+    }
+
+    @Test
+    void testIgnore5YenCoin() {
+        clickOn("#yen50Button");
+        verifyThat("#AmountLabel", hasText("50"));
+
+        clickOn("#yen5Button");
+
+        verifyThat("#AmountLabel", hasText("50"));
+    }
+
+    @Test
+    void testNormalPurchase() {
+        clickOn("#yen100Button");
+        clickOn("#yen100Button");
+
+        clickOn("#ColaButton");
+
+        verifyThat("#OutputLabel", hasText("コーラ"));
+        verifyThat("#AmountLabel", hasText("40"));
+    }
+
+    @Test
+    void testRefund() {
+        clickOn("#yen500Button");
+
+        clickOn("#RefundButton");
+
+        verifyThat("#AmountLabel", hasText("0"));
+        verifyThat("#ChangeLabel", hasText("500"));
+    }
 }

@@ -62,6 +62,9 @@ public class UIController {
         }
 //        商品IDをserveDrinkに送って取り出し口に商品を表示させる
         Item prod =  drinkVendor.serveDrink( prodID ) ;
+        if (prod == null) {
+            return;
+        }
         OutputLabel.setText( prod.getName() );
         OutputLabel.setVisible(true);
 //        購入回数が3回に到達したときお釣りを吐き出させて強制終了する
